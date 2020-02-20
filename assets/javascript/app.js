@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    document.getElementById("submit_answers").style.display = "none";
+    document.getElementById("submit_answers").style.visibility = 'hidden';
 
     $("#start_button").click(function() {
 
@@ -27,11 +27,9 @@ $(document).ready(function(){
         }
     
         run();
-
         $("#instruction").html("GOOD LUCK!")
-
-        document.getElementById("submit_answers").style.display = "show";
-
+        document.getElementById("start_button").style.visibility = 'hidden';
+        document.getElementById("submit_answers").style.visibility = "visible";
 
 
 
