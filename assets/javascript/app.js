@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    document.getElementById("submit_answers").style.display = "none";
+
     $("#start_button").click(function() {
 
         var number = 300
@@ -28,7 +30,7 @@ $(document).ready(function(){
 
         $("#instruction").html("GOOD LUCK!")
 
-        $("#start_button").html("SUBMIT ANSWERS")
+        document.getElementById("submit_answers").style.display = "show";
 
 
 
