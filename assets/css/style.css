@@ -5,8 +5,17 @@
     width: 200px;
     text-align: center;
     padding: 10px;
+    margin: auto;
 }
 
 body {
     background-image: url("../images/Sports.png");
+}
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+    float: none;
+    border: solid black 1px;
 }
