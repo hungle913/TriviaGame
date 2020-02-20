@@ -1,29 +1,41 @@
 $(document).ready(function(){
 
-    // Need load function for game to start
-
     $("#start_button").click(function() {
+
+        var number = 300
+        var intervalID;
+        $("#start_button").on("click", run);
+        
+        function run() {
+            clearInterval(intervalID);
+            intervalID = setInterval(decrement, 1000)
+        }
+    
+        function decrement() {
+            number--;
+            $("#timer").html("TIME REMAINING ON QUIZ: " + number );
+                if (number === 0) {
+            stop()
+            alert("Time Up!")
+            }
+        }
+    
+        function stop() {
+            clearInterval(intervalID);
+        }
+    
+        run();
+
+        $("#instruction").html("GOOD LUCK!")
 
         $("#start_button").html("SUBMIT ANSWERS")
 
-        function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
-            function showQuestions(questions, quizContainer){
-                // code will go here
-            }
-        
-            function showResults(questions, quizContainer, resultsContainer){
-                // code will go here
-            }
-        
-            // show the questions
-            showQuestions(questions, quizContainer);
-        
-            // when user clicks submit, show results
-            submitButton.onclick = function(){
-                showResults(questions, quizContainer, resultsContainer);
-            }
-        }
+
+
+
+
+
 
 
 
