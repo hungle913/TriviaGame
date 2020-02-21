@@ -31,6 +31,14 @@ $(document).ready(function(){
         document.getElementById("start_button").style.visibility = 'hidden';
         document.getElementById("submit_answers").style.visibility = "visible";
 
+        //create variable of array of questions. 
+
+        //need a function to build the quiz
+
+        //need to start the quiz right away
+
+        //need function to submit and show the results of the quiz
+
 
 
 
