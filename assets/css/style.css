@@ -33,3 +33,13 @@ body {
     margin: auto;
     padding: 10px;
 }
+
+#timer {
+    font-size: 25px;
+    font-weight: bolder;
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    color: red;
+}
