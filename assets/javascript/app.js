@@ -136,6 +136,11 @@ $(document).ready(function(){
         },             
     ];
 
+        //need to reference questions, results, and submit ID's for later use
+        var questionContainer = document.getElementById("questions");
+        var resultsContainer = document.getElementById("results");
+        var submitButton = document.getElementById("submit_answers");
+        
         //need a function to build the quiz
 
         //need to start the quiz right away
