@@ -45,7 +45,7 @@ $(document).ready(function(){
         correctAnswer: "a"
         },
         {
-        question: "What is Hockey played on",
+        question: "What is Hockey played on?",
         answers: {
             a: "Dirt",
             b: "Grass",
@@ -85,7 +85,7 @@ $(document).ready(function(){
         correctAnswer: "c"
         },
         {
-        question1: "How many innings are in a Baseball game",
+        question: "How many innings are in a Baseball game?",
         answers: {
             a: "8 innings",
             b: "9 innings",
@@ -95,7 +95,7 @@ $(document).ready(function(){
         correctAnswer: "b"
         },
         {
-        question1: "How many quarters are in a football game?",
+        question: "How many quarters are in a football game?",
         answers: {
             a: "1 quarter",
             b: "2 quarters",
@@ -105,7 +105,7 @@ $(document).ready(function(){
         correctAnswer: "d"
         },
         {
-        question1: "How many NFL teams are there?",
+        question: "How many NFL teams are there?",
         answers: {
             a: "28 teams",
             b: "30 teams",
@@ -115,7 +115,7 @@ $(document).ready(function(){
         correctAnswer: "c"
         },
         {
-        question1: "How many MLB teams are there?",
+        question: "How many MLB teams are there?",
         answers: {
             a: "30 teams",
             b: "32 teams",
@@ -125,7 +125,7 @@ $(document).ready(function(){
         correctAnswer: "a"
         },
         {
-        question1: "How many NBA teams are there?",
+        question: "How many NBA teams are there?",
         answers: {
             a: "28 teams",
             b: "30 teams",
@@ -140,8 +140,32 @@ $(document).ready(function(){
         var questionContainer = document.getElementById("questions");
         var resultsContainer = document.getElementById("results");
         var submitButton = document.getElementById("submit_answers");
-        
+
         //need a function to build the quiz
+
+       function startQuiz(){
+           var output = [];
+           myQuestions.forEach(
+               (currentQuestion, questionNumber) => {
+                var answers = [];
+                for(letter in currentQuestion.answers){
+                    answers.push(
+                        `<label>
+                        <input type="radio" name="question${questionNumber}" value="${letter}">
+                        ${letter} :
+                        ${currentQuestion.answers[letter]}
+                        </label>`
+                    );
+                }
+                output.push(
+                    `<div class="question"> ${currentQuestion.question}</div>
+                    <div class="answers"> ${answers.join('')}</div>`
+                );
+           }
+           );
+           questionContainer.innerHTML = output.join('');
+       }
+       startQuiz();
 
         //need to start the quiz right away
 
