@@ -152,14 +152,14 @@ $(document).ready(function(){
                     answers.push(
                         `<label>
                         <input type="radio" name="question${questionNumber}" value="${letter}">
-                        ${letter} :
+                        ${letter} : 
                         ${currentQuestion.answers[letter]}
                         </label>`
                     );
                 }
                 output.push(
-                    `<div class="question"> ${currentQuestion.question}</div>
-                    <div class="answers"> ${answers.join('')}</div>`
+                    `<div class="question"> ${currentQuestion.question}</div><br>
+                    <div class="answers"> ${answers.join('')}</div><br><br>`
                 );
            }
            );

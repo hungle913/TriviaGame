@@ -43,3 +43,10 @@ body {
     margin: auto;
     color: red;
 }
+
+#questions {
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+}
