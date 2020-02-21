@@ -1,8 +1,8 @@
 #title {
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 50px;
+    font-weight: bolder;
     border: solid red 5px;
-    width: 200px;
+    width: 300px;
     text-align: center;
     padding: 10px;
     margin: auto;
@@ -16,6 +16,20 @@ body {
     max-width: 1100px;
     margin: auto;
     padding: 10px;
-    float: none;
     border: solid black 1px;
+}
+
+#instruction {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: blue;
+}
+
+.button {
+    max-width: 102px;
+    margin: auto;
+    padding: 10px;
 }
