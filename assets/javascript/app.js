@@ -2,10 +2,17 @@ $(document).ready(function(){
 
     document.getElementById("submit_answers").style.visibility = 'hidden';
 
+    var intervalID;
+    function stop() {
+        console.log(intervalID)
+        clearInterval(intervalID);
+    }
+    
+
     $("#start_button").click(function() {
 
         var number = 300
-        var intervalID;
+
         $("#start_button").on("click", run);
         
         function run() {
@@ -23,9 +30,7 @@ $(document).ready(function(){
             }
         }
     
-        function stop() {
-            clearInterval(intervalID);
-        }
+
     
         run();
         $("#instruction").html("GOOD LUCK!")
@@ -58,25 +63,27 @@ $(document).ready(function(){
         questionContainer.innerHTML = output.join('');
     }
 
-            //need function to submit and show the results of the quiz
+        //need function to submit and show the results of the quiz
 
-            function showResults(){
-                var answerContainers = questionContainer.querySelectorAll(".answers");
-                let numCorrect = 0
-                myQuestions.forEach((currentQuestion, questionNumber) => {
-                    var answerContainer = answerContainers[questionNumber];
-                    var selector = `input[name=question${questionNumber}]:checked`;
-                    var userAnswer = (answerContainer.querySelector(selector)||{}).value;
+        function showResults(){
+            var answerContainers = questionContainer.querySelectorAll(".answers");
+            let numCorrect = 0
+            myQuestions.forEach((currentQuestion, questionNumber) => {
+                var answerContainer = answerContainers[questionNumber];
+                var selector = `input[name=question${questionNumber}]:checked`;
+                var userAnswer = (answerContainer.querySelector(selector)||{}).value;
                     if(userAnswer === currentQuestion.correctAnswer){
                         numCorrect++;
                         answerContainers[questionNumber].style.color = "green";
                     }
                     else{
                         answerContainers[questionNumber].style.color = "red";
-                    }
-                });
-                resultsContainer.innerHTML = `<br>${numCorrect} out of ${myQuestions.length}`;
-            }
+                }
+            });
+            resultsContainer.innerHTML = `<br>${numCorrect} out of ${myQuestions.length}`;
+            stop();
+        }
+
         //need to reference questions, results, and submit ID's for later use
         var questionContainer = document.getElementById("questions");
         var resultsContainer = document.getElementById("results");
