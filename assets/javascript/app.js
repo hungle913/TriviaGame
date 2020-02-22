@@ -19,6 +19,7 @@ $(document).ready(function(){
                 if (number === 0) {
             stop()
             alert("Time Up!")
+            showResults();
             }
         }
     
@@ -74,7 +75,7 @@ $(document).ready(function(){
                         answerContainers[questionNumber].style.color = "red";
                     }
                 });
-                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+                resultsContainer.innerHTML = `<br>${numCorrect} out of ${myQuestions.length}`;
             }
         //need to reference questions, results, and submit ID's for later use
         var questionContainer = document.getElementById("questions");
