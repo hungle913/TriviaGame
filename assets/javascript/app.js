@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     $("#start_button").click(function() {
 
-        var number = 300
+        var number = 150
 
         $("#start_button").on("click", run);
         
