@@ -4,8 +4,7 @@ $(document).ready(function(){
 
     var intervalID;
     function stop() {
-        console.log(intervalID)
-        clearInterval(intervalID);
+       clearInterval(intervalID);
     }
     
 
@@ -19,7 +18,6 @@ $(document).ready(function(){
             clearInterval(intervalID);
             intervalID = setInterval(decrement, 1000)
         }
-    
         function decrement() {
             number--;
             $("#timer").html("TIME REMAINING ON QUIZ: " + number );
