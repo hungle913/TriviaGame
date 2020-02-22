@@ -31,9 +31,59 @@ $(document).ready(function(){
         document.getElementById("start_button").style.visibility = 'hidden';
         document.getElementById("submit_answers").style.visibility = "visible";
 
+
+       //need a function to build the quiz
+
+       function startQuiz(){
+        var output = [];
+        myQuestions.forEach(
+            (currentQuestion, questionNumber) => {
+             var answers = [];
+             for(letter in currentQuestion.answers){
+                 answers.push(
+                     `<label>
+                     <input type="radio" name="question${questionNumber}" value="${letter}">
+                     ${letter} : 
+                     ${currentQuestion.answers[letter]}
+                     </label>`
+                 );
+             }
+             output.push(
+                 `<div class="question"> ${currentQuestion.question}</div><br>
+                 <div class="answers"> ${answers.join('')}</div><br><br>`
+             );
+        }
+        );
+        questionContainer.innerHTML = output.join('');
+    }
+
+            //need function to submit and show the results of the quiz
+
+            function showResults(){
+                var answerContainers = questionContainer.querySelectorAll(".answers");
+                let numCorrect = 0
+                myQuestions.forEach((currentQuestion, questionNumber) => {
+                    var answerContainer = answerContainers[questionNumber];
+                    var selector = `input[name=question${questionNumber}]:checked`;
+                    var userAnswer = (answerContainer.querySelector(selector)||{}).value;
+                    if(userAnswer === currentQuestion.correctAnswer){
+                        numCorrect++;
+                        answerContainers[questionNumber].style.color = "green";
+                    }
+                    else{
+                        answerContainers[questionNumber].style.color = "red";
+                    }
+                });
+                resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+            }
+        //need to reference questions, results, and submit ID's for later use
+        var questionContainer = document.getElementById("questions");
+        var resultsContainer = document.getElementById("results");
+        var submitButton = document.getElementById("submit_answers");
+
         //create variable of array of questions. 
 
-    var myQuestions = [
+        var myQuestions = [
         {
         question: "How long is a football field?",
         answers: {
@@ -136,59 +186,13 @@ $(document).ready(function(){
         },             
     ];
 
-        //need to reference questions, results, and submit ID's for later use
-        var questionContainer = document.getElementById("questions");
-        var resultsContainer = document.getElementById("results");
-        var submitButton = document.getElementById("submit_answers");
 
-        //need a function to build the quiz
-
-       function startQuiz(){
-           var output = [];
-           myQuestions.forEach(
-               (currentQuestion, questionNumber) => {
-                var answers = [];
-                for(letter in currentQuestion.answers){
-                    answers.push(
-                        `<label>
-                        <input type="radio" name="question${questionNumber}" value="${letter}">
-                        ${letter} : 
-                        ${currentQuestion.answers[letter]}
-                        </label>`
-                    );
-                }
-                output.push(
-                    `<div class="question"> ${currentQuestion.question}</div><br>
-                    <div class="answers"> ${answers.join('')}</div><br><br>`
-                );
-           }
-           );
-           questionContainer.innerHTML = output.join('');
-       }
         //need to start the quiz right away
 
         startQuiz();
 
-        //need function to submit and show the results of the quiz
 
-       function showResults(){
-           var answerContainers = questionContainer.querySelectorAll(".answers");
-           let numCorrect = 0
-           myQuestions.forEach((currentQuestion, questionNumber) => {
-               var answerContainer = answerContainers[questionNumber];
-               var selector = `input[name=question${questionNumber}]:checked`;
-               var userAnswer = (answerContainer.querySelector(selector)||{}).value;
-               if(userAnswer === currentQuestion.correctAnswer){
-                   numCorrect++;
-                   answerContainers[questionNumber].style.color = "green";
-               }
-               else{
-                   answerContainers[questionNumber].style.color = "red";
-               }
-           });
-           resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-       }
-
+        submitButton.addEventListener('click', showResults);
 
 
 
