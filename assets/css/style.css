@@ -50,3 +50,11 @@ body {
     margin: auto;
     text-align: center;
 }
+
+#results {
+    font-size: 22px;
+    font-weight: bold;
+    color: blue;
+    margin: auto;
+    width: 120px;
+}
