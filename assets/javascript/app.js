@@ -165,13 +165,29 @@ $(document).ready(function(){
            );
            questionContainer.innerHTML = output.join('');
        }
-       startQuiz();
-
         //need to start the quiz right away
+
+        startQuiz();
 
         //need function to submit and show the results of the quiz
 
-
+       function showResults(){
+           var answerContainers = questionContainer.querySelectorAll(".answers");
+           let numCorrect = 0
+           myQuestions.forEach((currentQuestion, questionNumber) => {
+               var answerContainer = answerContainers[questionNumber];
+               var selector = `input[name=question${questionNumber}]:checked`;
+               var userAnswer = (answerContainer.querySelector(selector)||{}).value;
+               if(userAnswer === currentQuestion.correctAnswer){
+                   numCorrect++;
+                   answerContainers[questionNumber].style.color = "green";
+               }
+               else{
+                   answerContainers[questionNumber].style.color = "red";
+               }
+           });
+           resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+       }
 
 
 
