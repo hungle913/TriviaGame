@@ -81,6 +81,7 @@ $(document).ready(function(){
                 }
             });
             resultsContainer.innerHTML = `<br>${numCorrect} out of ${myQuestions.length}`;
+            audioElement.pause();
             stop();
         }
 
