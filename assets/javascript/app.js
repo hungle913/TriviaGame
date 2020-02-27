@@ -6,11 +6,13 @@ $(document).ready(function(){
     function stop() {
        clearInterval(intervalID);
     }
-    
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "assets/media/SportCenterIntro.mp3");
 
     $("#start_button").click(function() {
 
         var number = 150
+        audioElement.play();
 
         $("#start_button").on("click", run);
         
