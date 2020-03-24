@@ -96,10 +96,10 @@ $(document).ready(function(){
         {
         question: "How long is a football field?",
         answers: {
-            a: "100 yards",
-            b: "100 feet",
-            c: "1000 yards",
-            d: "1000 feet"
+            a: "100 yrd",
+            b: "100 ft",
+            c: "1000 yrd",
+            d: "1000 ft"
         },
         correctAnswer: "a"
         },
@@ -116,80 +116,80 @@ $(document).ready(function(){
         {
         question: "How many quarters are in a basketball game?",
         answers: {
-            a: "1 quarter",
-            b: "2 quarters",
-            c: "3 quarters",
-            d: "4 quarters"
+            a: "1",
+            b: "2",
+            c: "3",
+            d: "4"
         },
         correctAnswer: "d"
         },
         {
         question: "How many periods are in a Soccer game?",
         answers: {
-            a: "1 period",
-            b: "2 periods",
-            c: "3 periods",
-            d: "4 periods"
+            a: "1",
+            b: "2",
+            c: "3",
+            d: "4"
         },
         correctAnswer: "b"
         },
         {
         question: "How many periods are in a Hockey game?",
         answers: {
-            a: "1 period",
-            b: "2 periods",
-            c: "3 periods",
-            d: "4 periods"
+            a: "1",
+            b: "2",
+            c: "3",
+            d: "4"
         },
         correctAnswer: "c"
         },
         {
         question: "How many innings are in a Baseball game?",
         answers: {
-            a: "8 innings",
-            b: "9 innings",
-            c: "10 innings",
-            d: "11 innings"
+            a: "8",
+            b: "9",
+            c: "10",
+            d: "11"
         },
         correctAnswer: "b"
         },
         {
         question: "How many quarters are in a football game?",
         answers: {
-            a: "1 quarter",
-            b: "2 quarters",
-            c: "3 quarters",
-            d: "4 quarters"
+            a: "1",
+            b: "2",
+            c: "3",
+            d: "4"
         },
         correctAnswer: "d"
         },
         {
         question: "How many NFL teams are there?",
         answers: {
-            a: "28 teams",
-            b: "30 teams",
-            c: "32 teams",
-            d: "34 teams"
+            a: "28",
+            b: "30",
+            c: "32",
+            d: "34"
         },
         correctAnswer: "c"
         },
         {
         question: "How many MLB teams are there?",
         answers: {
-            a: "30 teams",
-            b: "32 teams",
-            c: "34 teams",
-            d: "36 teams"
+            a: "30",
+            b: "32",
+            c: "34",
+            d: "36"
         },
         correctAnswer: "a"
         },
         {
         question: "How many NBA teams are there?",
         answers: {
-            a: "28 teams",
-            b: "30 teams",
-            c: "32 teams",
-            d: "34 teams"
+            a: "28",
+            b: "30",
+            c: "32",
+            d: "34"
         },
         correctAnswer: "b"
         },             
